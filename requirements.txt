@@ -1,0 +1,16 @@
+aiohttp
+beautifulsoup4
+aiofiles
+tqdm
+python-dateutil
+google-genai>=0.16.0
+hnswlib
+uvicorn
+fastapi
+pydantic
+orjson
+requests
+numpy
+sentence-transformers
+python-dotenv
+playwright
