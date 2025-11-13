@@ -15,5 +15,4 @@ sentence-transformers
 python-dotenv
 playwright
 einops
-cross-encoder
 playwright
