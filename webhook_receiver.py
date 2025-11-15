@@ -15,6 +15,15 @@ async def receive_webhook(data: dict):
     """Receive webhook notifications"""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
+    # Save to webhook_logs.logs
+    log_entry = {
+        "timestamp": timestamp,
+        "data": data
+    }
+    
+    with open("webhook_logs.logs", "a", encoding="utf-8") as f:
+        f.write(json.dumps(log_entry) + "\n")
+    
     print(f"\n{'='*60}")
     print(f"🔔 WEBHOOK RECEIVED at {timestamp}")
     print(f"{'='*60}")
@@ -24,6 +33,7 @@ async def receive_webhook(data: dict):
     print(f"{'='*60}\n")
     
     return {"status": "received", "timestamp": timestamp}
+
 
 @app.get("/health")
 async def health():

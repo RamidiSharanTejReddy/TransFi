@@ -24,7 +24,6 @@ TransFi/
 ├── query.py               # Part 1: Query CLI
 ├── api.py                 # Part 2: FastAPI server
 ├── webhook_receiver.py    # Part 2: Webhook receiver
-├── test_client.py         # API testing client
 ├── requirements.txt       # Dependencies
 ├── .env                   # Environment variables
 └── README.md             # This file
