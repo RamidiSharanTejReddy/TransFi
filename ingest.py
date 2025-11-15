@@ -73,31 +73,6 @@ async def gather_products_solutions(base_url: str, session: aiohttp.ClientSessio
                 
     except Exception as e:
         print(f"❌ Error extracting links from homepage: {e}")
-        # Fallback to hardcoded URLs if link extraction fails
-        fallback_urls = [
-            f"{base_url}/products/bizpay",
-            f"{base_url}/products/checkouts", 
-            f"{base_url}/products/collections",
-            f"{base_url}/products/payouts",
-            f"{base_url}/products/ramp",
-            f"{base_url}/products/single-api",
-            f"{base_url}/products/wallet",
-            f"{base_url}/solutions/enterprises",
-            f"{base_url}/solutions/startups",
-            f"{base_url}/solutions/payment-gateway",
-            f"{base_url}/solutions/payment-service-provider",
-            f"{base_url}/solutions/payroll"
-        ]
-        
-        for url in fallback_urls:
-            if len(pages) >= max_pages:
-                break
-            u, status, content = await safe_fetch(url)
-            if status == 200:
-                pages.append((u, content))
-                print(f"✓ Fallback scraped: {u}")
-            else:
-                failed.append((u, status))
     
     print(f"\n🎯 Total pages scraped: {len(pages)}")
     return pages, failed
@@ -152,10 +127,10 @@ async def run_ingest(url, chunk_size=1000, overlap=200, concurrency=5):
         
         # Save structured data in clean_text format
         structured_content = f"""TITLE: {doc['title']}
-URL: {doc['url']}
-SHORT_DESCRIPTION: {doc['short_description']}
-LONG_DESCRIPTION: {doc['long_description']}"""
-        
+                                URL: {doc['url']}
+                                SHORT_DESCRIPTION: {doc['short_description']}
+                                LONG_DESCRIPTION: {doc['long_description']}"""
+                                        
         with open(clean_dir / f"{filename}.txt", 'w', encoding='utf-8') as f:
             f.write(structured_content)
         

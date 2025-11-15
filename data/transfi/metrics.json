@@ -1,10 +1,10 @@
 {
-  "total_time_s": 204.1,
+  "total_time_s": 161.5,
   "pages_scraped": 16,
   "pages_failed": 1,
   "total_chunks": 356,
   "total_tokens": 43041,
-  "embedding_time_s": 197.1,
+  "embedding_time_s": 150.7,
   "indexing_time_s": 0.1,
   "avg_scraping_time_per_page": 0.3,
   "errors": [

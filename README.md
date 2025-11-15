@@ -176,9 +176,6 @@ uvicorn api:app --port 8000
 
 **Terminal 3: Test API Endpoints**
 ```bash
-# Test ingestion (async with webhook callback)
-python test_client.py
-
 # Or use curl/PowerShell:
 curl -X POST http://localhost:8000/api/ingest \
      -H "Content-Type: application/json" \
@@ -309,7 +306,7 @@ python query.py --questions file.txt --concurrent  # Parallel processing
 
 **3. "No module named 'rag'"**
 - Ensure you're in the project root directory
-- Check that `rag/__init__.py` exists
+- Check that `rag/qa.py` exists
 
 **4. Webhook not receiving callbacks**
 - Verify webhook receiver is running on correct port
@@ -389,5 +386,3 @@ playwright           # Dynamic content (bonus)
 - ✅ Clear project structure
 
 ---
-
-**Built with ❤️ for TransFi RAG Assignment**
