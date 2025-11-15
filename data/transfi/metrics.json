@@ -1,12 +1,12 @@
 {
-  "total_time_s": 232.3,
+  "total_time_s": 204.1,
   "pages_scraped": 16,
   "pages_failed": 1,
   "total_chunks": 356,
   "total_tokens": 43041,
-  "embedding_time_s": 214.3,
+  "embedding_time_s": 197.1,
   "indexing_time_s": 0.1,
-  "avg_scraping_time_per_page": 1.0,
+  "avg_scraping_time_per_page": 0.3,
   "errors": [
     "https://www.transfi.com/solutions/gaming-businesses-payment (404)"
   ]
